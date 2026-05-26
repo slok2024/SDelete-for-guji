@@ -6,6 +6,7 @@ SDeletePro GUI 是一款基于微软 Sysinternals 核心工具 SDelete 打造的
 无论应对日常的文件防恢复粉碎，还是批量对磁盘未分配空间进行深度清洗填零，本项目都能提供坚实、透明且不可逆的安全保障。
 
 ✨ 核心特性
+
 ⚡ 独创内核架构自适应检测：
 具备智能的系统位数感知能力。通过直接读取 Windows 系统环境变量（而非依赖 Python 内置库的表层判断），即使在 64 位操作系统上运行 32 位的程序环境，也能 100% 精准识别并优先调度 64 位底层安全内核，彻底规避因架构错配引发的底层驱动调用失败。
 
@@ -41,6 +42,7 @@ pip install tkinterdnd2 pyinstaller
 
 Bash
 pyinstaller --noconfirm --onefile --windowed --add-data "sdelete32.exe;." --add-data "sdelete64.exe;." --copy-metadata tkinterdnd2 --name "SDeletePro_Universal" del.py
+
 ⚠️ 免责声明 (Disclaimer)
 本工具调用的底层 SDelete 覆写行为是完全不可逆的。数据一旦被执行粉碎，任何数据恢复软件（包括低级取证工具）均无法挽回。
 
